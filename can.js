@@ -24,11 +24,11 @@ var colorArray = [
   "#ef4923",
   "#ef2394",
   "#b223ef"
-];
+];//Array of color for balls
 window.addEventListener("mousemove", function(event) {
   mouse.x = event.x;
   mouse.y = event.y;
-});
+});//get mouse axis
 
 function Circle(x, y, dy, dx, radius) {
   this.x = x;
@@ -83,14 +83,14 @@ function init() {
     circleArray.push(new Circle(x, y, dx, dy, radius));
   }
 }
-// arc
+// open loop function always run 
 console.log(circleArray);
 function animation() {
   requestAnimationFrame(animation);
   c.clearRect(0, 0, innerWidth, innerHeight);
   for (var i = 0; i < circleArray.length; i++) {
     circleArray[i].update();
-  }
+  } 
 }
 init();
 animation();
